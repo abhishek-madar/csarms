@@ -1,0 +1,24 @@
+{
+  "name": "csarms-unified",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run start\" \"npm run dev --prefix frontend\"",
+    "build": "npm run vercel-build",
+    "vercel-build": "cd frontend && npm install && npm run build && rm -rf ../public && mkdir -p ../public && cp -r dist/* ../public/",
+    "start": "cd backend && node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.6.2",
+    "multer": "^2.1.1",
+    "nodemailer": "^8.0.7"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.4"
+  }
+}

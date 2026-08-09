@@ -1,0 +1,67 @@
+.notifications-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.notifications-overlay-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.notifications-panel {
+  position: relative;
+  z-index: 1001;
+  width: 100%;
+  max-width: 480px;
+  height: 100vh;
+  border-radius: 24px 0 0 24px !important; /* Flat on the right edge */
+  padding: 32px 24px !important;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.85) !important;
+}
+
+.panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 8px; /* Scrollbar space */
+}
+
+/* Custom Scrollbar for panel */
+.panel-content::-webkit-scrollbar {
+  width: 6px;
+}
+.panel-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.panel-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.notification-card {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  transition: transform 0.2s ease;
+}
+
+.notification-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(16, 185, 129, 0.3);
+}
